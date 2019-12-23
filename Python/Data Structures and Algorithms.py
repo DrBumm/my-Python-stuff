@@ -1,4 +1,4 @@
-# Data Structures and Algorithms
+# Dr.Bumm Maps
 
 class Maps:
     """
