@@ -14,7 +14,9 @@ class Window(Frame):
         self.cookie_button = Button(self, text=str(1*self.multiplier) + "+ Keks(e)", relief=FLAT, borderwidth=0, command=self.add_cookie)
         self.cookie_button.config(image=self.cookie_img)
         self.cookie_button.pack()
-
+        
+        # der multiplizierer button funktioniert nicht und ich werde mich demnächst auch nicht darum kümmern also ist hier etwas 
+        # was ihr als challenge ansehen könnt (die wohl nicht schwer ist)
         self.multiplier_button = Button(self, text="Kekse x" + str(self.multiplier+self.multiplierlvl) + " (" + str(100*self.multiplierlvl) + ") Kekse", relief=FLAT, borderwidth=0, command=self.multiplier)
         self.multiplier_button.pack()
 
