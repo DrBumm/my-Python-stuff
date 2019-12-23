@@ -9,7 +9,8 @@ from flask import Flask, url_for, request, render_template, redirect, make_respo
 folder = "/home/pi/Desktop/Python Flask/uploads"
 extensions = set(['txt', 'jpg', 'png', 'py'])
 app = Flask(__name__)
-app.secret_key = "\xa7o\xce\xe8\x80&\xb7Qc/b\x89TT\xda\x05\xd9\xae\xe50\x06\xcd\xad"
+app.secret_key = "\xa7o\xce\xe8\x80&\xb7Qc/b\x89TT\xda\x05\xd9\xae\xe50\x06\xcd\xad" 
+# Bitte diesen Schlüssel durch einen anderen erstetzen da dieser hier öffentlich ist!!!
 
 def allowed(filename):
     return '.' in filename and filename.rsplit(".", 1)[1].lower() in extensions
@@ -39,10 +40,12 @@ def login():
     resp = make_response("Hello " + name + "!")
     resp.set_cookie("username", name)
     return resp
+# Einfacher Demonstration wie einfach man Cookies erstellen kann
 
 @app.route("/werbung")
 def werbung():
     return render_template('werbung.html')
+# Hier mache ich werbung für jemanden der mir das Programmieren sozusagen beigebracht hat
 
 @app.route("/upload", methods=["POST", "GET"])
 def upload():
@@ -57,6 +60,7 @@ def upload():
             file.save(os.path.join(folder, filename))
             return redirect(request.url)
     return render_template('upload.html')
+# Demonstration wie man sachen uploaden kann 
 
 @app.route("/sessions", methods=['GET', 'POST'])
 def sessions():
@@ -81,10 +85,16 @@ def reg_db():
         return "Sie sind nun registriert"
     else:
         return render_template('database_login.html')
+# Einfacher Login code
 
 @app.route("/credits")
 def credits():
     return render_template('thanks.html')
+# Diese personen haben mir geholfen beim aufbau dieses scriptes
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0', port=80, debug=True)
+# debug = false! Falls diesen Code jemand verwenden will und es nicht mehr nur entwickelt
+
+# Und bitte wenn ihr dies hier verwenden wollt es sicherer machen es gibt eine ganze menge exploits im Internet mit denen man
+# diesen Server hacken könnte
