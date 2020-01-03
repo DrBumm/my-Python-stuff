@@ -3,7 +3,7 @@ import time
 from src import mnlp
 
 
-def move(pos, r, lvl):
+def move(pos, r, lvl, lives, mlives):
     if r == 'l':
         if lvl[pos-1] == 1:
             pass
@@ -12,6 +12,13 @@ def move(pos, r, lvl):
             print('Exiting..')
             time.sleep(3)
             exit()
+        elif lvl[pos-1] == 5:
+            if not mlives == 0:
+                lives -= 1
+                mlives -= 1
+            else:
+                lvl[pos] = 3
+                lvl[pos-1] = 2
         else:
             lvl[pos] = 3
             lvl[pos-1] = 2
@@ -23,6 +30,13 @@ def move(pos, r, lvl):
             print('Exiting..')
             time.sleep(3)
             exit()
+        elif lvl[pos+1] == 5:
+            if not mlives == 0:
+                lives -= 1
+                mlives -= 1
+            else:
+                lvl[pos] = 3
+                lvl[pos+1] = 2
         else:
             lvl[pos] = 3
             lvl[pos+1] = 2
@@ -36,6 +50,13 @@ def move(pos, r, lvl):
             print('Exitting..')
             time.sleep(3)
             exit()
+        elif lvl[pos+opp] == 5:
+            if not mlives == 0:
+                lives -= 1
+                mlives -= 1
+            else:
+                lvl[pos] = 3
+                lvl[pos+opp] = 2
         else:
             lvl[pos] = 3
             lvl[pos+opp] = 2
@@ -49,7 +70,14 @@ def move(pos, r, lvl):
             print('Exitting..')
             time.sleep(3)
             exit()
+        elif lvl[pos-opp] == 5:
+            if not mlives == 0:
+                lives -= 1
+                mlives -= 1
+            else:
+                lvl[pos] = 3
+                lvl[pos-opp] = 2
         else:
             lvl[pos] = 3
             lvl[pos-opp] = 2
-    return lvl
+    return lvl, lives, mlives

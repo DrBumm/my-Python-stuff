@@ -2,8 +2,8 @@
 from src import mnlp
 
 lvl = ['XXXXXXXXXX',
-       'X       PX',
+       'X  G    PX',
        'XF     XXX',
        'XXXXXXXXXX']
 
-mnlp.start(lvl)
+mnlp.start(lvl, True)
