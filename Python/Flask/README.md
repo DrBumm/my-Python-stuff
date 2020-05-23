@@ -14,7 +14,7 @@ templates---
           |-sessions.html - Ist für experimente mit Cookies da
           |-thanks.html - Zum danke sagen an die Leute die mir geholfen haben
           |-upload.html - Ist für die Uploads zuständig
-          |-werbung.html - Werbung was denn sonnst+
+          |-werbung.html - Werbung was denn sonnst
 __pycache__---
             |- unwichtig und hat nichts mit dem Code zu tun
 ```
